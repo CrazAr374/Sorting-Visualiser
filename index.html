@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Sorting Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <div id="main-content">
+        <header>
+            <h1>Sorting Visualizer</h1>
+            <button id="themeToggle"><i class="fas fa-moon"></i></button>
+        </header>
+
+        <main>
+            <div class="algorithm-selection">
+                <h2>Select Algorithm</h2>
+                <div class="algorithm-cards">
+                    <div class="algorithm-card" data-algorithm="bubbleSort">
+                        <h3>Bubble Sort</h3>
+                        <p>Time: O(n²)</p>
+                        <p>Space: O(1)</p>
+                    </div>
+                    <div class="algorithm-card" data-algorithm="quickSort">
+                        <h3>Quick Sort</h3>
+                        <p>Time: O(n log n)</p>
+                        <p>Space: O(log n)</p>
+                    </div>
+                    <div class="algorithm-card" data-algorithm="mergeSort">
+                        <h3>Merge Sort</h3>
+                        <p>Time: O(n log n)</p>
+                        <p>Space: O(n)</p>
+                    </div>
+                    <div class="algorithm-card" data-algorithm="heapSort">
+                        <h3>Heap Sort</h3>
+                        <p>Time: O(n log n)</p>
+                        <p>Space: O(1)</p>
+                    </div>
+                    <div class="algorithm-card" data-algorithm="shellSort">
+                        <h3>Shell Sort</h3>
+                        <p>Time: O(n log n)</p>
+                        <p>Space: O(1)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visualization-container">
+                <div id="visualization" class="visualization"></div>
+            </div>
+
+            <div class="controls">
+                <div class="size-control">
+                    <label for="arraySize">Array Size: <span id="arraySizeValue">50</span></label>
+                    <input type="range" id="arraySize" min="10" max="100" value="50">
+                </div>
+                <div class="speed-control">
+                    <label for="sortingSpeed">Speed: <span id="speedValue">50</span></label>
+                    <input type="range" id="sortingSpeed" min="1" max="100" value="50">
+                </div>
+                <div class="buttons">
+                    <button id="generateArray" class="btn">
+                        <i class="fas fa-random"></i> New Array
+                    </button>
+                    <button id="startSort" class="btn">
+                        <i class="fas fa-play"></i> Start
+                    </button>
+                    <button id="pauseSort" class="btn" disabled>
+                        <i class="fas fa-pause"></i> Pause
+                    </button>
+                    <button id="resetSort" class="btn">
+                        <i class="fas fa-undo"></i> Reset
+                    </button>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Comparisons</h3>
+                    <p id="comparisons">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Swaps</h3>
+                    <p id="swaps">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Time Elapsed</h3>
+                    <p id="timeElapsed">0.00s</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
